@@ -9,7 +9,7 @@ using System.IO;
 
 namespace NoteApp
 {
-    class ProjectManager
+    public class ProjectManager
     {
         //Создаём экземпляр сериализатора
         JsonSerializer serializer = new JsonSerializer();
@@ -17,7 +17,7 @@ namespace NoteApp
         public void SaveFile(Project noteList)
         {
             //Открываем поток для записи в файл с указанием пути
-            using (StreamWriter sw = new StreamWriter(@"c:\json.txt"))
+            using (StreamWriter sw = new StreamWriter(@"C:\Games\json.txt"))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 //Вызываем сериализацию и передаем объект, который хотим сериализовать

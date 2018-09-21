@@ -7,7 +7,7 @@ using NoteApp;
 
 namespace NoteApp
 {
-    class Project
+    public class Project
     {
         public List<Note> NoteList = new List<Note>();
     }

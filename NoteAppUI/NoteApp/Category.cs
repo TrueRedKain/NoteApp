@@ -8,7 +8,7 @@ namespace NoteApp
 {
     public class Category
     {
-        enum NoteCategory
+        public enum NoteCategory
         {
             Home = 1,
             Work,

@@ -10,7 +10,7 @@ namespace NoteApp
     public class Note
     {
         private string _name;
-        string Name
+        public string Name
         {
             get => _name;
             set
@@ -25,15 +25,21 @@ namespace NoteApp
                 }
             }
         }
-        Category NoteCategory;
+
+        private Category _noteCat;
+        public Category NoteCategory
+        { get => _noteCat; set { } }
+
         private string _text;
-        string Text
-        { get => _text; }
+        public string Text { get => _text; set { _text = value; } }
+        
+
         private DateTime _makeDate;
-        DateTime MakeDate
-        { get => _makeDate;}
+        public DateTime MakeDate
+        { get => _makeDate; set { _makeDate = value; } }
+
         private DateTime _lastEditDate;
-        DateTime LastEditDate
-        { get => _lastEditDate;}
+        public DateTime LastEditDate
+        { get => _lastEditDate; set { _lastEditDate = value; } }
     }
 }
