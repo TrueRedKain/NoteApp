@@ -9,5 +9,11 @@ namespace NoteApp
 {
     public class Note
     {
+        string Name;
+        enum NoteCategory;
+        string Text;
+        DateTime MakeDate;
+        DateTime LastEditDate;
+
     }
 }
