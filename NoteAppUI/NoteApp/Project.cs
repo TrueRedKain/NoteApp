@@ -9,5 +9,6 @@ namespace NoteApp
 {
     class Project
     {
+        public List<Note> NoteList = new List<Note>();
     }
 }
