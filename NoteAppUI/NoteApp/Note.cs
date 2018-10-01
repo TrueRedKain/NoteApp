@@ -26,20 +26,66 @@ namespace NoteApp
             }
         }
 
-        private NoteCategory _noteCat;
+        private NoteCategory _noteCategory;
         public NoteCategory NoteCategory
-        { get => _noteCat; set { } }
+        {
+            get => _noteCategory;
+            set
+            {
+                if (value<NoteCategory.Home|value>NoteCategory.Others)
+                {
+                    throw new ArgumentException("Задана неверная категория заметки:" + value);
+                }
+                else
+                {
+                    _noteCategory = value;
+                }
+            }
+        }
 
         private string _text;
-        public string Text { get => _text; set { _text = value; } }
+        public string Text {
+            get => _text;
+            set
+            {
+                _text = value;
+            }
+        }
         
 
         private DateTime _creationDate;
         public DateTime CreationDate
-        { get => _creationDate; set { _creationDate = value; } }
+        {
+            get => _creationDate;
+            set
+            {
+                if (value>System.DateTime.Now)
+                {
+                    throw new ArgumentException("Дата создания не может быть позже сегодняшней даты, а задается"+ value);
+                }
+                else
+                {
+                    _creationDate = value;
+                }
+
+            }
+        }
 
         private DateTime _lastEditDate;
         public DateTime LastEditDate
-        { get => _lastEditDate; set { _lastEditDate = value; } }
+        {
+            get => _lastEditDate;
+            set
+            {
+                if (value > System.DateTime.Now)
+                {
+                    throw new ArgumentException("Дата последнего изменения не может быть позже сегодняшней даты, а задается" + value);
+                }
+                else
+                {
+                    _lastEditDate = value;
+                }
+            }
+        }
     }
 }
