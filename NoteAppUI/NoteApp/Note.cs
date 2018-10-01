@@ -26,17 +26,17 @@ namespace NoteApp
             }
         }
 
-        private Category _noteCat;
-        public Category NoteCategory
+        private NoteCategory _noteCat;
+        public NoteCategory NoteCategory
         { get => _noteCat; set { } }
 
         private string _text;
         public string Text { get => _text; set { _text = value; } }
         
 
-        private DateTime _makeDate;
-        public DateTime MakeDate
-        { get => _makeDate; set { _makeDate = value; } }
+        private DateTime _creationDate;
+        public DateTime CreationDate
+        { get => _creationDate; set { _creationDate = value; } }
 
         private DateTime _lastEditDate;
         public DateTime LastEditDate

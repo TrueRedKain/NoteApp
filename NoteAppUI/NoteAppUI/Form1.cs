@@ -1,5 +1,6 @@
 ﻿using NoteApp;
 using System.Windows.Forms;
+using System;
 
 namespace NoteAppUI
 {
@@ -12,19 +13,19 @@ namespace NoteAppUI
             InitializeComponent();
         }
 
-        public Project jhgsd()
+        public Project NoteInstance()
         {
             Note _note = new Note();
 
             
             _note.Name = "Toxa";
             _note.Text = "Сегодня я снова сгорел играя за Браюна";
-            _note.MakeDate = new System.DateTime(2000, 10, 25);
+            _note.CreationDate = System.DateTime.Now;
             _note.LastEditDate = new System.DateTime(2000, 10, 30);
-            _note.NoteCategory = null;
+            _note.NoteCategory = NoteCategory.Home;
 
 
-            _noteList.NoteList.Add(_note);
+            _noteList.Notes.Add(_note);
 
             MessageBox.Show(_note.Name);    
             MessageBox.Show(_note.Text);
@@ -33,7 +34,7 @@ namespace NoteAppUI
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            _noteList = jhgsd();
+            _noteList = NoteInstance();
             ProjectManager _project = new ProjectManager();
             _project.SaveFile(_noteList);
         }
