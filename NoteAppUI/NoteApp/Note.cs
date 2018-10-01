@@ -7,9 +7,15 @@ using NoteApp;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Класс отвечает за создание новых записей в журнале заметок
+    /// </summary>
     public class Note
     {
         private string _name;
+        /// <summary>
+        /// Поле отвечает за присваивание имени заметке
+        /// </summary>
         public string Name
         {
             get => _name;
@@ -27,6 +33,9 @@ namespace NoteApp
         }
 
         private NoteCategory _noteCategory;
+        /// <summary>
+        /// Поле отвечает за присваивание типа заметке
+        /// </summary>
         public NoteCategory NoteCategory
         {
             get => _noteCategory;
@@ -44,7 +53,11 @@ namespace NoteApp
         }
 
         private string _text;
-        public string Text {
+        /// <summary>
+        /// Поле отвечает за текст, передаваемый в заметку
+        /// </summary>
+        public string Text
+        {
             get => _text;
             set
             {
@@ -54,6 +67,9 @@ namespace NoteApp
         
 
         private DateTime _creationDate;
+        /// <summary>
+        /// Поле отвечает за присваивание даты создания заметки
+        /// </summary>
         public DateTime CreationDate
         {
             get => _creationDate;
@@ -72,6 +88,9 @@ namespace NoteApp
         }
 
         private DateTime _lastEditDate;
+        /// <summary>
+        /// Поле отвечает за присваивание даты последнего редактирования заметки
+        /// </summary>
         public DateTime LastEditDate
         {
             get => _lastEditDate;
