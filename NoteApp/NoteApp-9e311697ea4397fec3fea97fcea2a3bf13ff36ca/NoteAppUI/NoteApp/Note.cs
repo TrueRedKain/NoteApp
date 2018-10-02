@@ -93,6 +93,10 @@ namespace NoteApp
                 {
                     throw new ArgumentException("Дата последнего изменения не может быть позже сегодняшней даты, а задается" + value);
                 }
+                else if (value < _creationDate)
+                {
+                    throw new ArgumentException("Дата последнего изменения не может быть ранее даты создания");
+                }
                 else
                 {
                     _lastEditDate = value;
