@@ -7,6 +7,9 @@ using NoteApp;
 
 namespace NoteApp
 {
+    /// <summary>
+    /// Класс отвечает за список заметок в приложении
+    /// </summary>
     public class Project
     {
         public List<Note> Notes = new List<Note>();

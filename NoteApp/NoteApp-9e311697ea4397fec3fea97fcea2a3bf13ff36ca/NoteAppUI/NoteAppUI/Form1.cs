@@ -21,7 +21,7 @@ namespace NoteAppUI
             _note.Name = "Toxa";
             _note.Text = "Сегодня я снова сгорел играя за Браюна";
             _note.CreationDate = System.DateTime.Now;
-            _note.LastEditDate = new System.DateTime(2000, 10, 30);
+            _note.LastEditDate = System.DateTime.Now;
             _note.NoteCategory = NoteCategory.Home;
 
 

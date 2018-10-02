@@ -41,14 +41,7 @@ namespace NoteApp
             get => _noteCategory;
             set
             {
-                if (value<NoteCategory.Home|value>NoteCategory.Others)
-                {
-                    throw new ArgumentException("Задана неверная категория заметки:" + value);
-                }
-                else
-                {
-                    _noteCategory = value;
-                }
+                _noteCategory = value;
             }
         }
 

@@ -17,7 +17,7 @@ namespace NoteApp
         /// <summary>
         /// Создаёт экземпляр сериализатора
         /// </summary>
-        JsonSerializer serializer = new JsonSerializer();
+        JsonSerializer serializer = new JsonSerializer() {Formatting = Formatting.Indented };
 
         /// <summary>
         /// Открывает поток и записывает в файл указанный объект
