@@ -109,5 +109,6 @@ namespace NoteAppUI
                 FillListView(_noteList.Notes);
             }
         }
+
     }
 }

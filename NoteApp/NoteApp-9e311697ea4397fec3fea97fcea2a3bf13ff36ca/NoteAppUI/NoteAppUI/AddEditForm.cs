@@ -60,6 +60,18 @@ namespace NoteAppUI
                 TitleTextBox.Focus();
                 return false;
             }
+            try
+            {
+                _note.LastEditDate = ModifiedDatePicker.Value;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Note Add Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                TitleTextBox.Focus();
+                return false;
+            }
+            _note.CreationDate = CreationDatePicker.Value;
 
 
             return true;

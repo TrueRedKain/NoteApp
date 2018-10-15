@@ -44,10 +44,8 @@
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.NoteList = new System.Windows.Forms.ListView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.CategoriesComboBox = new System.Windows.Forms.ComboBox();
             this.TextBox = new System.Windows.Forms.TextBox();
             this.Headline = new System.Windows.Forms.Label();
@@ -63,7 +61,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 415);
+            this.button1.Location = new System.Drawing.Point(174, 385);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -192,41 +190,24 @@
             this.NoteList.View = System.Windows.Forms.View.Details;
             this.NoteList.SelectedIndexChanged += new System.EventHandler(this.NoteList_SelectedIndexChanged);
             // 
-            // button2
+            // AddButton
             // 
-            this.button2.Location = new System.Drawing.Point(12, 385);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(117, 385);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button2";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AddButton.Location = new System.Drawing.Point(12, 385);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.TabIndex = 5;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.addNoteToolStripMenuItem_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(117, 385);
+            this.button4.Location = new System.Drawing.Point(93, 385);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
             this.button4.Text = "button2";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(217, 385);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button2";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // CategoriesComboBox
             // 
@@ -337,10 +318,8 @@
             this.Controls.Add(this.Headline);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.CategoriesComboBox);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.NoteList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -373,10 +352,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView NoteList;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox CategoriesComboBox;
         private System.Windows.Forms.TextBox TextBox;
         private System.Windows.Forms.Label Headline;

@@ -34,8 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.ModifiedDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.CreationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.NoteTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -101,21 +101,21 @@
             this.TitleTextBox.Size = new System.Drawing.Size(718, 20);
             this.TitleTextBox.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // ModifiedDatePicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(266, 83);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(94, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.ModifiedDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ModifiedDatePicker.Location = new System.Drawing.Point(266, 83);
+            this.ModifiedDatePicker.Name = "ModifiedDatePicker";
+            this.ModifiedDatePicker.Size = new System.Drawing.Size(94, 20);
+            this.ModifiedDatePicker.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // CreationDatePicker
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(70, 83);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(94, 20);
-            this.dateTimePicker2.TabIndex = 6;
+            this.CreationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.CreationDatePicker.Location = new System.Drawing.Point(70, 83);
+            this.CreationDatePicker.Name = "CreationDatePicker";
+            this.CreationDatePicker.Size = new System.Drawing.Size(94, 20);
+            this.CreationDatePicker.TabIndex = 6;
             // 
             // NoteTextBox
             // 
@@ -153,8 +153,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.NoteTextBox);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.CreationDatePicker);
+            this.Controls.Add(this.ModifiedDatePicker);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.CategoryComboBox);
             this.Controls.Add(this.label4);
@@ -176,8 +176,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CategoryComboBox;
         private System.Windows.Forms.TextBox TitleTextBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker ModifiedDatePicker;
+        private System.Windows.Forms.DateTimePicker CreationDatePicker;
         private System.Windows.Forms.TextBox NoteTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
