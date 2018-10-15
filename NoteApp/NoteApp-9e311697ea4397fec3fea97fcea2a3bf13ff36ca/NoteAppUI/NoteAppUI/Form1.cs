@@ -1,42 +1,113 @@
 ﻿using NoteApp;
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
 
 namespace NoteAppUI
 {
     public partial class Form1 : Form
     {
         private Project _noteList = new Project();
+        ProjectManager _projectManager = new ProjectManager();
+        Note _note = new Note();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        public Project NoteInstance()
-        {
-            Note _note = new Note();
-
-            
+        public Note NoteInstance()
+        {              
             _note.Name = "Toxa";
             _note.Text = "Сегодня я снова сгорел играя за Браюна";
-            _note.CreationDate = System.DateTime.Now;
-            _note.LastEditDate = System.DateTime.Now;
-            _note.NoteCategory = NoteCategory.Home;
-
-
-            _noteList.Notes.Add(_note);
-
-            MessageBox.Show(_note.Name);    
-            MessageBox.Show(_note.Text);
-            return _noteList;
+            _note.CreationDate = DateTime.Now;
+            _note.LastEditDate = DateTime.Now;
+            _note.NoteCategory = NoteCategory.Home;            
+            return _note;
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            _noteList = NoteInstance();
-            ProjectManager _project = new ProjectManager();
-            _project.SaveFile(_noteList);
+            _note = NoteInstance();
+            _noteList.Notes.Add(_note);
+            FillListView(_noteList.Notes);
+            _projectManager.SaveFile(_noteList);
+        }
+
+        /// <summary>
+        /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
+        /// то список будет очищен и снова заполнен.
+        /// </summary>
+        /// <param name="_note">Список контактов</param>
+        public void FillListView(List<Note> _note)
+        {
+            if (NoteList.Items.Count > 0) NoteList.Items.Clear();
+            foreach (Note note in _note)
+            {
+                AddNewClient(note);
+            }
+        }
+
+        /// <summary>
+        /// Добавить нового контакта
+        /// </summary>
+        /// <param name="Note">Контакт</param>
+        public void AddNewClient(Note contact)
+        {
+            int index = NoteList.Items.Add(contact.Name).Index;
+            NoteList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
+        }
+
+        private void NoteList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (NoteList.SelectedItems.Count != 0)
+            {
+                CategoryLabel.Text = _noteList.Notes[NoteList.SelectedIndices[0]].NoteCategory.ToString();
+                Headline.Text = _noteList.Notes[NoteList.SelectedIndices[0]].Name;
+                TextBox.Text = _noteList.Notes[NoteList.SelectedIndices[0]].Text;
+                CreateDatePicker.Value = _noteList.Notes[NoteList.SelectedIndices[0]].CreationDate;
+                ModifiedDatePicker.Value = _noteList.Notes[NoteList.SelectedIndices[0]].LastEditDate;
+            }
+            else
+            {
+                CategoryLabel.Text = string.Empty;
+                Headline.Text = string.Empty;
+                TextBox.Text = string.Empty;
+                CreateDatePicker.Value = new DateTime(2000,01,01);
+                ModifiedDatePicker.Value = new DateTime(2000, 01, 01);
+            }
+
+        }
+
+        /// <summary>
+        /// Вызов формы About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form About = new AboutForm();
+            About.ShowDialog();
+        }        
+
+        /// <summary>
+        /// Событие закрытия главного окна
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditForm AddNote = new AddEditForm();
+            if (AddNote.ShowDialog() == DialogResult.OK)
+            {
+                _noteList.Notes.Add(AddNote._noteContainer);
+                FillListView(_noteList.Notes);
+            }
         }
     }
 }

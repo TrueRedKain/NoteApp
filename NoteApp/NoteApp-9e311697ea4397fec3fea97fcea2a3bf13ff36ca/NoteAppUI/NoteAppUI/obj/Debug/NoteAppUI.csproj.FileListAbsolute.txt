@@ -28,3 +28,5 @@ C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fc
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.csproj.CopyComplete
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.exe
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.pdb
+C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.AboutForm.resources
+C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.AddEditForm.resources
