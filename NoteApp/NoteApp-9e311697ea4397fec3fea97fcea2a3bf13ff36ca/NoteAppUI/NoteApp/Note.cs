@@ -23,6 +23,7 @@ namespace NoteApp
                 else
                 {
                     _name = value;
+                    LastEditDate = DateTime.Now;
                 }
             }
         }

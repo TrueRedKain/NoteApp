@@ -9,9 +9,11 @@ namespace NoteAppUI
         public AddEditForm()
         {
             InitializeComponent();
+           // CategoryComboBox.Items.Add(NoteCategory.Documents);
+
+            //NoteCategory category = (NoteCategory)CategoryComboBox.SelectedItem;
         }
-
-
+        
         private Note _note = new Note();
         public Note _noteContainer => _note;
 
@@ -80,6 +82,11 @@ namespace NoteAppUI
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

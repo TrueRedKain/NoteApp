@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace NoteAppUI
 {
-    public partial class Form1 : Form
+    public partial class NoteAppMain : Form
     {
         private Project _noteList = new Project();
         ProjectManager _projectManager = new ProjectManager();
         Note _note = new Note();
 
-        public Form1()
+        public NoteAppMain()
         {
             InitializeComponent();
         }
@@ -110,5 +110,14 @@ namespace NoteAppUI
             }
         }
 
+        private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

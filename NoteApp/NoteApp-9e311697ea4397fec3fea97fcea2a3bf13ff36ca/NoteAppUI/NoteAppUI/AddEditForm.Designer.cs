@@ -103,6 +103,7 @@
             // 
             // ModifiedDatePicker
             // 
+            this.ModifiedDatePicker.Enabled = false;
             this.ModifiedDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ModifiedDatePicker.Location = new System.Drawing.Point(266, 83);
             this.ModifiedDatePicker.Name = "ModifiedDatePicker";
@@ -111,6 +112,7 @@
             // 
             // CreationDatePicker
             // 
+            this.CreationDatePicker.Enabled = false;
             this.CreationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.CreationDatePicker.Location = new System.Drawing.Point(70, 83);
             this.CreationDatePicker.Name = "CreationDatePicker";
@@ -144,6 +146,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddEditForm
             // 

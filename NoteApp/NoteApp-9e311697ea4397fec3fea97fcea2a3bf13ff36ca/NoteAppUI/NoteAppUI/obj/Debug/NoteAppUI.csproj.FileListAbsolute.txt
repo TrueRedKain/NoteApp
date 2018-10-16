@@ -21,7 +21,6 @@ C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fc
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\bin\Debug\NoteApp.pdb
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.csprojAssemblyReference.cache
-C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.Form1.resources
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.Properties.Resources.resources
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.csproj.GenerateResource.cache
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.csproj.CoreCompileInputs.cache
@@ -30,3 +29,4 @@ C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fc
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.pdb
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.AboutForm.resources
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.AddEditForm.resources
+C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteAppUI\obj\Debug\NoteAppUI.NoteAppMain.resources
