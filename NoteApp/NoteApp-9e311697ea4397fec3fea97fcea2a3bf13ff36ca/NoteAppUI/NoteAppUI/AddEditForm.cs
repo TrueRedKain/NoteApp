@@ -9,9 +9,15 @@ namespace NoteAppUI
         public AddEditForm()
         {
             InitializeComponent();
-           // CategoryComboBox.Items.Add(NoteCategory.Documents);
+            CategoryComboBox.Items.Add(NoteCategory.Finance);
+            CategoryComboBox.Items.Add(NoteCategory.Documents);
+            CategoryComboBox.Items.Add(NoteCategory.Work);
+            CategoryComboBox.Items.Add(NoteCategory.SportAndHealth);
+            CategoryComboBox.Items.Add(NoteCategory.Home);
+            CategoryComboBox.Items.Add(NoteCategory.Humans);
+            CategoryComboBox.Items.Add(NoteCategory.Others);
 
-            //NoteCategory category = (NoteCategory)CategoryComboBox.SelectedItem;
+           
         }
         
         private Note _note = new Note();
@@ -42,15 +48,17 @@ namespace NoteAppUI
                 TitleTextBox.Focus();
                 return false;
             }
+
+            //NoteCategory
             try
             {
-                //TODO: Преобразовать str в NoteCategory
-               // _note.NoteCategory= CategoryComboBox.Text;
+                _note.NoteCategory = (NoteCategory)CategoryComboBox.SelectedItem;
             }
             catch
             {
 
             }
+
             try
             {
                 _note.Text = NoteTextBox.Text;
@@ -87,6 +95,15 @@ namespace NoteAppUI
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void NoteView(Note NoteEdit)
+        {
+            TitleTextBox.Text = NoteEdit.Name;
+            CategoryComboBox.Text = NoteEdit.NoteCategory.ToString();
+            CreationDatePicker.Value = NoteEdit.CreationDate;
+            NoteTextBox.Text = NoteEdit.Text;
+            ModifiedDatePicker.Value = DateTime.Now;
         }
     }
 }

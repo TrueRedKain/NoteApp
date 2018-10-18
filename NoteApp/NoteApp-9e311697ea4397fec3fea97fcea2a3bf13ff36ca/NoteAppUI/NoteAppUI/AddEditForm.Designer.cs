@@ -80,14 +80,6 @@
             // CategoryComboBox
             // 
             this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Items.AddRange(new object[] {
-            "Home",
-            "Work",
-            "SportAndHealth",
-            "Humans",
-            "Documents",
-            "Finance",
-            "Others"});
             this.CategoryComboBox.Location = new System.Drawing.Point(70, 53);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);

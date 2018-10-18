@@ -66,9 +66,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.removeNoteToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -156,7 +156,7 @@
             // removeNoteToolStripMenuItem
             // 
             this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.removeNoteToolStripMenuItem.Text = "Remove Note";
             this.removeNoteToolStripMenuItem.Click += new System.EventHandler(this.removeNoteToolStripMenuItem_Click);
             // 
@@ -222,8 +222,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
-            this.button4.Text = "button2";
+            this.button4.Text = "Edit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.editNoteToolStripMenuItem_Click);
             // 
             // CategoriesComboBox
             // 

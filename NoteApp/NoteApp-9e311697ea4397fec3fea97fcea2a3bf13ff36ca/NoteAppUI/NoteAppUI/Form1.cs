@@ -31,7 +31,7 @@ namespace NoteAppUI
             _note = NoteInstance();
             _noteList.Notes.Add(_note);
             FillListView(_noteList.Notes);
-            _projectManager.SaveFile(_noteList);
+            SaveFile(_noteList);
         }
 
         /// <summary>
@@ -107,17 +107,38 @@ namespace NoteAppUI
             {
                 _noteList.Notes.Add(AddNote._noteContainer);
                 FillListView(_noteList.Notes);
+                SaveFile(_noteList);
+                
             }
         }
 
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            AddEditForm EditForm = new AddEditForm();
+            int EditInd = NoteList.SelectedIndices[0];
+            EditForm.NoteView(_noteList.Notes[EditInd]);
+            if (EditForm.ShowDialog() == DialogResult.OK)
+            {
+                _noteList.Notes.RemoveAt(EditInd);
+                NoteList.Items[EditInd].Remove();
+                _noteList.Notes.Insert(EditInd,EditForm._noteContainer);
+                FillListView(_noteList.Notes);
+                SaveFile(_noteList);
+
+            }
         }
 
         private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            int RemInd = NoteList.SelectedIndices[0];
+            _noteList.Notes.RemoveAt(RemInd);
+            NoteList.Items[RemInd].Remove();
+            SaveFile(_noteList);
+        }
+
+        private void SaveFile(Project noteList)
+        {
+            _projectManager.SaveFile(noteList);
         }
     }
 }
