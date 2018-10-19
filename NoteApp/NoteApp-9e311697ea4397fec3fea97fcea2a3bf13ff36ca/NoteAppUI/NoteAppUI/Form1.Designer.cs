@@ -261,9 +261,9 @@
             this.Headline.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Headline.Location = new System.Drawing.Point(316, 25);
             this.Headline.Name = "Headline";
-            this.Headline.Size = new System.Drawing.Size(140, 24);
+            this.Headline.Size = new System.Drawing.Size(10, 24);
             this.Headline.TabIndex = 8;
-            this.Headline.Text = "Test Headline";
+            this.Headline.Text = "\r\n";
             // 
             // label3
             // 
@@ -288,9 +288,8 @@
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Location = new System.Drawing.Point(374, 60);
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(23, 13);
+            this.CategoryLabel.Size = new System.Drawing.Size(0, 13);
             this.CategoryLabel.TabIndex = 8;
-            this.CategoryLabel.Text = "Cat";
             // 
             // label6
             // 
