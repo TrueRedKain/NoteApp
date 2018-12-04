@@ -64,7 +64,7 @@ namespace NoteApp
             get => _creationDate;
             set
             {
-                if (value>System.DateTime.Now)
+                if (value > DateTime.Now)
                 {
                     throw new ArgumentException("Дата создания не может быть позже сегодняшней даты, а задается"+ value);
                 }
@@ -85,13 +85,13 @@ namespace NoteApp
             get => _lastEditDate;
             set
             {
-                if (value > System.DateTime.Now)
+                if (value > DateTime.Now)
                 {
                     throw new ArgumentException("Дата последнего изменения не может быть позже сегодняшней даты, а задается" + value);
                 }
                 else if (value < _creationDate)
                 {
-                    throw new ArgumentException("Дата последнего изменения не может быть ранее даты создания");
+                    throw new FormatException("Дата последнего изменения не может быть ранее даты создания");
                 }
                 else
                 {

@@ -49,15 +49,8 @@ namespace NoteAppUI
                 return false;
             }
 
-            //NoteCategory
-            try
-            {
-                _note.NoteCategory = (NoteCategory)CategoryComboBox.SelectedItem;
-            }
-            catch
-            {
-
-            }
+            //NoteCategory            
+            _note.NoteCategory = (NoteCategory)CategoryComboBox.SelectedItem;            
 
             try
             {
@@ -70,6 +63,7 @@ namespace NoteAppUI
                 TitleTextBox.Focus();
                 return false;
             }
+
             try
             {
                 _note.LastEditDate = ModifiedDatePicker.Value;
@@ -80,6 +74,13 @@ namespace NoteAppUI
                     MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 TitleTextBox.Focus();
                 return false;
+            }
+            catch(FormatException e)
+            {
+                MessageBox.Show(e.Message, "Note Add Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                TitleTextBox.Focus();
+                return false;   
             }
             _note.CreationDate = CreationDatePicker.Value;
 

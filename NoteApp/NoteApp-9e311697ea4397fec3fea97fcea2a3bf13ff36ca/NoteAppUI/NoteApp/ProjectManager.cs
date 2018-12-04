@@ -12,18 +12,20 @@ namespace NoteApp
     /// <summary>
     /// Класс отвечающий за сериализацию
     /// </summary>
-    public class ProjectManager
+    public static class ProjectManager
     {
         /// <summary>
         /// Создаёт экземпляр сериализатора
         /// </summary>
-        JsonSerializer serializer = new JsonSerializer() {Formatting = Formatting.Indented };
+        
 
         /// <summary>
         /// Открывает поток и записывает в файл указанный объект
         /// </summary>
-        public void SaveFile(Project noteList)
+        public static void SaveFile(Project noteList)
         {
+            JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
+
             //Открываем поток для записи в файл с указанием пути
             using (StreamWriter sw = new StreamWriter(@"C:\Users\RedKain\Documents\Notes\NoteApp.notes"))
             using (JsonWriter writer = new JsonTextWriter(sw))
@@ -32,12 +34,13 @@ namespace NoteApp
                 serializer.Serialize(writer, noteList);
             }
         }
+
         /// <summary>
         /// Создает переменную, в которую записывает , с помощью сериализатора, данные из файла
         /// </summary>
         /// <returns> Возвращает данные из файла по указанному пути,в элементе списка
         /// </returns>
-        public Project LoadFile()
+        public static Project LoadFile()
         {
             //Создаём переменную, в которую поместим результат десериализации
             Project noteList = null;

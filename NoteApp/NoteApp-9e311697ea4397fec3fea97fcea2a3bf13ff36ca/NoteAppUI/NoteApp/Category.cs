@@ -9,18 +9,36 @@ namespace NoteApp
     /// <summary>
     /// Перечисление, определяющее тип создаваемой заметки.
     /// </summary>
-        public enum NoteCategory
-        {
-        /// <param name="NoteCategory">
-        /// Тип заметки задается целочисленным значением от 1 до 7
-        /// </param>
-            Home = 1,
-            Work,
-            SportAndHealth,
-            Humans,
-            Documents,
-            Finance,
-            Others,
-        }
+    public enum NoteCategory
+    {
+        /// <summary>
+        /// Категория "Дом"
+        /// </summary>
+        Home = 1,
+        /// <summary>
+        /// Категория "Работа"
+        /// </summary>
+        Work,
+        /// <summary>
+        ///  Категория "Здоровье и спорт"
+        /// </summary>
+        SportAndHealth,
+        /// <summary>
+        /// Категория "Люди"
+        /// </summary>
+        Humans,
+        /// <summary>
+        /// Категория "Документы"
+        /// </summary>
+        Documents,
+        /// <summary>
+        /// Категория "Финансы"
+        /// </summary>
+        Finance,
+        /// <summary>
+        /// Категория "Другое"
+        /// </summary>
+        Others,
+    }
     
 }

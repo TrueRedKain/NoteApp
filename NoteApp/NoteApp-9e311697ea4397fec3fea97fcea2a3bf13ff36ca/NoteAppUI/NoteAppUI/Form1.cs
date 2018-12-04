@@ -8,12 +8,13 @@ namespace NoteAppUI
     public partial class NoteAppMain : Form
     {
         private Project _noteList = new Project();
-        ProjectManager _projectManager = new ProjectManager();
-        Note _note = new Note();
+        private Note _note = new Note();
 
         public NoteAppMain()
         {
             InitializeComponent();
+            _noteList = ProjectManager.LoadFile();
+            FillListView(_noteList.Notes);
         }
 
         public Note NoteInstance()
@@ -39,7 +40,7 @@ namespace NoteAppUI
         /// то список будет очищен и снова заполнен.
         /// </summary>
         /// <param name="_note">Список контактов</param>
-        public void FillListView(List<Note> _note)
+        private void FillListView(List<Note> _note)
         {
             if (NoteList.Items.Count > 0) NoteList.Items.Clear();
             foreach (Note note in _note)
@@ -138,7 +139,7 @@ namespace NoteAppUI
 
         private void SaveFile(Project noteList)
         {
-            _projectManager.SaveFile(noteList);
+            ProjectManager.SaveFile(noteList);
         }
     }
 }
