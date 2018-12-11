@@ -13,7 +13,7 @@ namespace NoteAppUI
         public NoteAppMain()
         {
             InitializeComponent();
-            _noteList = ProjectManager.LoadFile();
+            _noteList = ProjectManager.LoadFile(String.Empty);
             FillListView(_noteList.Notes);
         }
 
@@ -139,7 +139,7 @@ namespace NoteAppUI
 
         private void SaveFile(Project noteList)
         {
-            ProjectManager.SaveFile(noteList);
+            ProjectManager.SaveFile(noteList,String.Empty);
         }
     }
 }

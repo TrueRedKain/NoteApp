@@ -11,7 +11,6 @@ C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fc
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\bin\Debug\NoteApp.pdb
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\bin\Debug\Newtonsoft.Json.dll
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\bin\Debug\Newtonsoft.Json.xml
-C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\obj\Debug\NoteApp.csprojAssemblyReference.cache
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\obj\Debug\NoteApp.csproj.CoreCompileInputs.cache
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\obj\Debug\NoteApp.csproj.CopyComplete
 C:\Users\RedKain\Source\Repos\NoteApp2\NoteApp\NoteApp-9e311697ea4397fec3fea97fcea2a3bf13ff36ca\NoteAppUI\NoteApp\obj\Debug\NoteApp.dll
