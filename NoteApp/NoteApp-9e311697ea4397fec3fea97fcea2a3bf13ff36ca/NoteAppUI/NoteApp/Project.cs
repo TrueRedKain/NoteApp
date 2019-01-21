@@ -13,5 +13,19 @@ namespace NoteApp
     public class Project
     {
         public List<Note> Notes = new List<Note>();
+
+        public List<Note> SortNotes(List<Note> notesList)
+        {
+            //
+            notesList.Sort(delegate (Note x, Note y)
+            {
+                if (x.LastEditDate == null && y.LastEditDate == null) return 0;
+                else if (x.LastEditDate == null) return -1;
+                else if (y.LastEditDate == null) return 1;
+                else return x.LastEditDate.CompareTo(y.LastEditDate);
+            });
+
+            return notesList;
+        }
     }
 }

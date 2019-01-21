@@ -41,7 +41,7 @@ namespace NoteAppUnitTest
         {
             _note = ProjectManager.LoadFile(_path + @"\TestNote\TestNotes.notes");
             Assert.AreEqual(2, _note.Notes.Count, "Кол-во записей в списке не совпадают");
-            Assert.AreEqual(_note.Notes[0].Name, _firstTestNote.Name, "Метод десеариализует не правильную информацию (Имя заметки)");
+            Assert.AreEqual(_note.Notes[1].Name, _secondTestNote.Name, "Метод десеариализует не правильную информацию (Имя заметки)");
             Assert.AreEqual(_note.Notes[0].Text, _firstTestNote.Text, "Метод десеариализует не правильную информацию (Текст заметки)");
             Assert.AreEqual(_note.Notes[1].NoteCategory, _secondTestNote.NoteCategory, "Метод десеариализует не правильную информацию (Категория заметки)");
             Assert.AreEqual(_note.Notes[0].CreationDate.Date, _firstTestNote.CreationDate, "Метод десеариализует не правильную информацию (Дата создания)");

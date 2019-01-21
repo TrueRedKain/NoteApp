@@ -39,11 +39,14 @@ namespace NoteAppUI
         /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
         /// то список будет очищен и снова заполнен.
         /// </summary>
-        /// <param name="_note">Список контактов</param>
-        private void FillListView(List<Note> _note)
+        /// <param name="notes">Список контактов</param>
+        private void FillListView(List<Note> notes)
         {
             if (NoteList.Items.Count > 0) NoteList.Items.Clear();
-            foreach (Note note in _note)
+
+            notes = _noteList.SortNotes(notes);
+
+            foreach (Note note in notes)
             {
                 AddNewClient(note);
             }
