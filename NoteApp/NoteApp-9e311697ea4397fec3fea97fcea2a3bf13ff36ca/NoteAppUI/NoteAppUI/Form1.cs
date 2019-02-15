@@ -16,6 +16,19 @@ namespace NoteAppUI
             InitializeComponent();
             _noteList = ProjectManager.LoadFile(String.Empty);
             FillListView(_noteList.Notes);
+            int k = 0;
+            foreach (var note in _noteList.Notes)
+            {
+                if ( note.LastView == true)
+                {
+                    Headline.Text = _noteList.Notes[k].Name;
+                    TextBox.Text = _noteList.Notes[k].Text;
+                    ModifiedDatePicker.Value = _noteList.Notes[k].LastEditDate;
+                    CreateDatePicker.Value = _noteList.Notes[k].CreationDate;
+                    CategoryLabel.Text = _noteList.Notes[k].NoteCategory.ToString();
+                }
+                k++;
+            }
         }
 
         public Note NoteInstance()
@@ -67,6 +80,11 @@ namespace NoteAppUI
         {
             var noteList = (CategoriesComboBox.Text == "All") ? _noteList : _projectForFind;
 
+            foreach (var note in _noteList.Notes)
+            {
+                note.LastView = false;
+            }
+
             if (NoteList.SelectedItems.Count != 0)
             {
                 CategoryLabel.Text = noteList.Notes[NoteList.SelectedIndices[0]].NoteCategory.ToString();
@@ -74,6 +92,7 @@ namespace NoteAppUI
                 TextBox.Text = noteList.Notes[NoteList.SelectedIndices[0]].Text;
                 CreateDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].CreationDate;
                 ModifiedDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].LastEditDate;
+                noteList.Notes[NoteList.SelectedIndices[0]].LastView = true;
             }
             else
             {
@@ -104,6 +123,7 @@ namespace NoteAppUI
         /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFile(_noteList);
             this.Close();
         }
 

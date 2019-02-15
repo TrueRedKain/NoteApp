@@ -29,6 +29,7 @@ namespace NoteAppUI
             if (Correct() == true)
             {
                 DialogResult = DialogResult.OK;
+                _note.LastView = false;
                 this.Close();
             }
         }
