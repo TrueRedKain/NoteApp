@@ -139,6 +139,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // addNoteToolStripMenuItem
             // 
@@ -157,7 +158,8 @@
             // removeNoteToolStripMenuItem
             // 
             this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.removeNoteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeNoteToolStripMenuItem.Text = "Remove Note";
             this.removeNoteToolStripMenuItem.Click += new System.EventHandler(this.removeNoteToolStripMenuItem_Click);
             // 
@@ -233,6 +235,7 @@
             // 
             this.CategoriesComboBox.FormattingEnabled = true;
             this.CategoriesComboBox.Items.AddRange(new object[] {
+            "All",
             "Home",
             "Work",
             "SportAndHealth",
@@ -245,6 +248,7 @@
             this.CategoriesComboBox.Size = new System.Drawing.Size(121, 21);
             this.CategoriesComboBox.TabIndex = 6;
             this.CategoriesComboBox.Text = "All";
+            this.CategoriesComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoriesComboBox_SelectedIndexChanged);
             // 
             // TextBox
             // 

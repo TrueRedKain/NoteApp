@@ -27,5 +27,20 @@ namespace NoteApp
 
             return notesList;
         }
+
+        public List<Note> FindCategory(string value)
+        {
+            List<Note> categoryList = new List<Note>();
+            NoteCategory result;
+            foreach (var note in Notes)
+            {                
+                if (Enum.TryParse(value, out result) && result == note.NoteCategory)
+                {
+                    categoryList.Add(note);
+                }
+            }
+
+            return categoryList;
+        }
     }
 }

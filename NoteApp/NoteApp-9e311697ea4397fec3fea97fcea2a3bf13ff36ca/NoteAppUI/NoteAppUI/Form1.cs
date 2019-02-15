@@ -8,6 +8,7 @@ namespace NoteAppUI
     public partial class NoteAppMain : Form
     {
         private Project _noteList = new Project();
+        private readonly Project _projectForFind = new Project();
         private Note _note = new Note();
 
         public NoteAppMain()
@@ -64,13 +65,15 @@ namespace NoteAppUI
 
         private void NoteList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var noteList = (CategoriesComboBox.Text == "All") ? _noteList : _projectForFind;
+
             if (NoteList.SelectedItems.Count != 0)
             {
-                CategoryLabel.Text = _noteList.Notes[NoteList.SelectedIndices[0]].NoteCategory.ToString();
-                Headline.Text = _noteList.Notes[NoteList.SelectedIndices[0]].Name;
-                TextBox.Text = _noteList.Notes[NoteList.SelectedIndices[0]].Text;
-                CreateDatePicker.Value = _noteList.Notes[NoteList.SelectedIndices[0]].CreationDate;
-                ModifiedDatePicker.Value = _noteList.Notes[NoteList.SelectedIndices[0]].LastEditDate;
+                CategoryLabel.Text = noteList.Notes[NoteList.SelectedIndices[0]].NoteCategory.ToString();
+                Headline.Text = noteList.Notes[NoteList.SelectedIndices[0]].Name;
+                TextBox.Text = noteList.Notes[NoteList.SelectedIndices[0]].Text;
+                CreateDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].CreationDate;
+                ModifiedDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].LastEditDate;
             }
             else
             {
@@ -118,31 +121,101 @@ namespace NoteAppUI
 
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddEditForm EditForm = new AddEditForm();
-            int EditInd = NoteList.SelectedIndices[0];
-            EditForm.NoteView(_noteList.Notes[EditInd]);
-            if (EditForm.ShowDialog() == DialogResult.OK)
+            if (NoteList.SelectedIndices.Count != 0)
             {
-                _noteList.Notes.RemoveAt(EditInd);
-                NoteList.Items[EditInd].Remove();
-                _noteList.Notes.Insert(EditInd,EditForm._noteContainer);
-                FillListView(_noteList.Notes);
-                SaveFile(_noteList);
+                int EditInd = (CategoriesComboBox.Text == "All") ? NoteList.SelectedIndices[0]
+                    : GetNoteIndex(_noteList.Notes, _projectForFind.Notes);
+                AddEditForm EditForm = new AddEditForm();
+                EditForm.NoteView(_noteList.Notes[EditInd]);
+                if (EditForm.ShowDialog() == DialogResult.OK)
+                {
+                    FillListView(_noteList.Notes);
+                    _noteList.Notes.RemoveAt(EditInd);
+                    NoteList.Items[EditInd].Remove();
+                    _noteList.Notes.Insert(EditInd, EditForm._noteContainer);                    
+                    SaveFile(_noteList);
+                    FilldListCategory();
 
+                }
             }
         }
 
         private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int RemInd = NoteList.SelectedIndices[0];
-            _noteList.Notes.RemoveAt(RemInd);
-            NoteList.Items[RemInd].Remove();
-            SaveFile(_noteList);
+            if (NoteList.SelectedIndices.Count != 0)
+            {
+                int RemInd = (CategoriesComboBox.Text == "All") ? NoteList.SelectedIndices[0]
+                    : GetNoteIndex(_noteList.Notes, _projectForFind.Notes);
+                FillListView(_noteList.Notes);
+                _noteList.Notes.RemoveAt(RemInd);
+                NoteList.Items[RemInd].Remove();
+                SaveFile(_noteList);
+                ClearAtRemove();
+                FilldListCategory();
+            }
         }
 
         private void SaveFile(Project noteList)
         {
             ProjectManager.SaveFile(noteList,String.Empty);
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CategoriesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilldListCategory();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="notes"></param>
+        /// <param name="findedNotes"></param>
+        /// <returns></returns>
+       private int GetNoteIndex(List<Note> notes, List<Note> findedNotes)
+        {
+            int index = 0;
+
+            foreach (var note in notes)
+            {
+                if (note == findedNotes[NoteList.SelectedIndices[0]])
+                {
+                    return index;
+                }
+
+                index++;
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void FilldListCategory()
+        {
+            if (CategoriesComboBox.Text != "All")
+            {
+                _projectForFind.Notes = _noteList.FindCategory(CategoriesComboBox.Text);
+                FillListView(_projectForFind.Notes);
+            }
+            else
+            {
+                FillListView(_noteList.Notes);
+            }
+        }
+        private void ClearAtRemove()
+        {
+            CategoryLabel.Text = string.Empty;
+            Headline.Text = string.Empty;
+            TextBox.Text = string.Empty;
+            CreateDatePicker.Value = new DateTime(2000, 01, 01);
+            ModifiedDatePicker.Value = new DateTime(2000, 01, 01);
+        }
     }
+
+
 }
