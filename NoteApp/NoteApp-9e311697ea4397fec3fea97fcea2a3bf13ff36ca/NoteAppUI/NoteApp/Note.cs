@@ -99,16 +99,5 @@ namespace NoteApp
                 }
             }
         }
-
-        private bool _lastView;
-
-        public bool LastView
-        {
-            get => _lastView;
-            set
-            {
-                _lastView = value;
-            }
-        }
     }
 }

@@ -16,34 +16,17 @@ namespace NoteAppUI
             InitializeComponent();
             _noteList = ProjectManager.LoadFile(String.Empty);
             FillListView(_noteList.Notes);
-            int k = 0;
-            foreach (var note in _noteList.Notes)
+            if (NoteList.Items.Count != 0)
             {
-                if ( note.LastView == true)
-                {
-                    Headline.Text = _noteList.Notes[k].Name;
-                    TextBox.Text = _noteList.Notes[k].Text;
-                    ModifiedDatePicker.Value = _noteList.Notes[k].LastEditDate;
-                    CreateDatePicker.Value = _noteList.Notes[k].CreationDate;
-                    CategoryLabel.Text = _noteList.Notes[k].NoteCategory.ToString();
-                }
-                k++;
+                int C = _noteList.CurrentNot;
+                NoteList.Items[C].Selected = true;
             }
         }
 
-        public Note NoteInstance()
-        {              
-            _note.Name = "Toxa";
-            _note.Text = "Сегодня я снова сгорел играя за Браюна";
-            _note.CreationDate = DateTime.Now;
-            _note.LastEditDate = DateTime.Now;
-            _note.NoteCategory = NoteCategory.Home;            
-            return _note;
-        }
+ 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _note = NoteInstance();
             _noteList.Notes.Add(_note);
             FillListView(_noteList.Notes);
             SaveFile(_noteList);
@@ -73,18 +56,13 @@ namespace NoteAppUI
         public void AddNewClient(Note contact)
         {
             int index = NoteList.Items.Add(contact.Name).Index;
-            NoteList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
+            NoteList.Items[index].Tag = contact; 
         }
 
         private void NoteList_SelectedIndexChanged(object sender, EventArgs e)
         {
             var noteList = (CategoriesComboBox.Text == "All") ? _noteList : _projectForFind;
-
-            foreach (var note in _noteList.Notes)
-            {
-                note.LastView = false;
-            }
-
+            
             if (NoteList.SelectedItems.Count != 0)
             {
                 CategoryLabel.Text = noteList.Notes[NoteList.SelectedIndices[0]].NoteCategory.ToString();
@@ -92,7 +70,7 @@ namespace NoteAppUI
                 TextBox.Text = noteList.Notes[NoteList.SelectedIndices[0]].Text;
                 CreateDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].CreationDate;
                 ModifiedDatePicker.Value = noteList.Notes[NoteList.SelectedIndices[0]].LastEditDate;
-                noteList.Notes[NoteList.SelectedIndices[0]].LastView = true;
+                _noteList.CurrentNot = NoteList.SelectedIndices[0];
             }
             else
             {
@@ -169,6 +147,10 @@ namespace NoteAppUI
                 FillListView(_noteList.Notes);
                 _noteList.Notes.RemoveAt(RemInd);
                 NoteList.Items[RemInd].Remove();
+                if (_noteList.CurrentNot == RemInd)
+                {
+                    _noteList.CurrentNot = 0;
+                }
                 SaveFile(_noteList);
                 ClearAtRemove();
                 FilldListCategory();
@@ -191,7 +173,7 @@ namespace NoteAppUI
         }
 
         /// <summary>
-        /// 
+        /// Метод позволяющий получить индекс элемента нового списка
         /// </summary>
         /// <param name="notes"></param>
         /// <param name="findedNotes"></param>
@@ -213,7 +195,7 @@ namespace NoteAppUI
         }
 
         /// <summary>
-        /// 
+        /// Метод заполняющий список категорий в зависимости от выбранной
         /// </summary>
         private void FilldListCategory()
         {
